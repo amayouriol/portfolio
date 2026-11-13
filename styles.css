@@ -31,7 +31,7 @@ button{font:inherit}
 [hidden]{display:none!important}
 .skip{position:absolute;left:12px;top:-60px;z-index:300;background:#E8C943;color:#020405;padding:10px 14px;font-family:'DM Mono',monospace;font-size:13px;text-decoration:none}
 .skip:focus{top:12px}
-.hbtn{display:inline-flex;align-items:center;min-height:38px;padding:0 14px;border:1px solid #E8C943;color:#E8C943;font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none}
+.hbtn{display:inline-flex;align-items:center;gap:8px;min-height:38px;padding:0 14px;border:1px solid #E8C943;color:#E8C943;font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none}
 .hbtn:hover{background:#E8C943;color:#020405}
 .ph{width:100%;height:100%;display:grid;place-items:center;text-align:center;padding:8px;border:1px dashed rgba(101,185,208,.5);color:#65B9D0;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.08em}
 .photo{width:100%;height:100%;object-fit:cover;display:block}
@@ -70,3 +70,19 @@ button{font:inherit}
 #skills.go .skbar{animation:fill 1s cubic-bezier(.3,.7,.2,1) forwards;animation-delay:calc(var(--i)*.85s)}
 #skills.go .pct{animation:cueIn .35s ease forwards;animation-delay:calc(var(--i)*.85s + 1s)}
 @media (prefers-reduced-motion:reduce){.skbar{width:100%!important}.pct{opacity:1!important}}
+
+/* ---- visuals ---- */
+.ico{flex:0 0 auto;display:block}
+.logo{position:relative;display:inline-grid;place-items:center;flex:0 0 auto;overflow:hidden;font-family:'Space Grotesk',sans-serif;line-height:1;letter-spacing:-.02em;box-shadow:inset 0 0 0 1px rgba(255,255,255,.12)}
+.logo b{font-weight:700}
+.logo img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#fff;padding:15%}
+.node .logo{box-shadow:none}
+.node{overflow:hidden}
+.thumb{overflow:hidden;background:#0b0e0f}
+
+/* ---- intro controls ---- */
+.skipintro{position:absolute;top:14px;right:14px;z-index:6;min-height:36px;padding:0 14px;background:rgba(2,4,5,.55);border:1px solid rgba(231,232,228,.35);color:#E7E8E4;font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;backdrop-filter:blur(4px)}
+.skipintro:hover{border-color:#E8C943;color:#E8C943}
+.crawlhint{position:absolute;left:0;right:0;bottom:10px;z-index:5;text-align:center;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#8d928e;pointer-events:none;animation:cueIn .8s ease 1.5s both;transition:opacity .4s}
+.crawlhint.gone{opacity:0!important;animation:none}
+#home.fast::after{content:"▶▶ 5×";position:absolute;left:14px;top:20px;font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.14em;color:#65B9D0;z-index:6}
