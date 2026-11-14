@@ -472,6 +472,7 @@ function showHolo() {
 function descend() {
   if (S.descended || S.view !== 'home') return;
   S.descended = true;
+  const fleet = $('[data-ships]'); if (fleet) fleet.classList.add('on');   // ships appear once the crawl is over
   const crawl = $('#crawl'); if (crawl) crawl.remove();
   const sk = $('#skipIntro'); if (sk) sk.remove();
   layoutHome();
@@ -551,7 +552,7 @@ function enterHome({ instant }) {
   dock.hidden = true; dockSpacer.hidden = true;
   S.descended = instant; S.holo = instant; S.hot = -1; S.active = -1;
   clearTimeout(autoTimer); clearTimeout(holoTimer);
-  if (instant) { const c = $('#crawl'); if (c) c.remove(); const k = $('#skipIntro'); if (k) k.remove(); $('#hero').innerHTML = heroHTML(); }
+  if (instant) { const fl = $('[data-ships]'); if (fl) fl.classList.add('on'); const c = $('#crawl'); if (c) c.remove(); const k = $('#skipIntro'); if (k) k.remove(); $('#hero').innerHTML = heroHTML(); }
   else autoTimer = setTimeout(descend, 20500);
   const crawlText = $('#crawlText'); if (crawlText) crawlText.addEventListener('animationend', descend);
   if (!instant) wireIntroControls();
