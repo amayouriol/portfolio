@@ -1,4 +1,4 @@
-# Andrea Mayo — Product Explorer
+# Andrea Mayo — Product & Strategy
 
 Personal portfolio of Andrea Mayo: finance background, MBA at Berkeley Haas, heading into Product Management.
 
@@ -8,8 +8,8 @@ The site is a small space-ship journey. A Star Wars-style crawl introduces Andre
 
 | Section | What it shows |
 |---|---|
-| **My Story** | The path from finance to product, as an orbital diagram and four chapters |
-| **How I Work** | Four anonymized case studies with metrics and a Problem → Impact flow |
+| **Her Story** | The path from finance to product and strategy, as an orbital diagram and a horizontal four-chapter route |
+| **How She Works** | Four anonymized case studies with metrics and a Problem → Impact flow |
 | **Experience** | Role timeline with highlights, education, and an animated top-skills panel |
 | **Portfolio** | Personal projects: a recruiting CRM, a Spotify lyrics game, and Buddi |
 | **Contact** | Email, LinkedIn, GitHub and Substack |
