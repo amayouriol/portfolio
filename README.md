@@ -10,7 +10,7 @@ The site is a small space-ship journey. A Star Wars-style crawl introduces Andre
 |---|---|
 | **Her Story** | The path from finance to product and strategy, as an orbital diagram and a horizontal four-chapter route |
 | **How She Works** | Four anonymized case studies with metrics and a Problem → Impact flow |
-| **Experience** | A "why Andrea" pitch: headline metrics, four hiring arguments, a role timeline with a metric per win, top skills with proof, and education |
+| **Experience** | A headline and intro, then a role timeline with bullet-point wins (confirmed Story Bank numbers), top skills and education |
 | **Portfolio** | Personal projects: a recruiting CRM, a Spotify lyrics game, and Buddi |
 | **Contact** | Email, LinkedIn, GitHub and Substack |
 
@@ -43,7 +43,7 @@ Everything lives at the top of `main.js`:
 - **`CONFIG`**: email, LinkedIn, GitHub, Substack and the photo path. A link left empty is hidden.
 - **`DEST`**: the five navigation destinations and the droid's lines.
 - **`PROJECTS`**: the How I Work case studies.
-- **`PROOF`, `WHY`, `JOBS`, `CAPS`, `EDU`**: the Experience headline metrics, the four hiring arguments, the timeline (each item is `{ m: metric chip, t: story }`), top skills with a proof line, and education.
+- **`JOBS`, `CAPS`, `EDU`**: the Experience timeline (each job has `items: [{ t: bullet text }]`), top skills and education.
 - **`SLOTS`**: Portfolio projects. Add `href` (and optionally `cta`) to show a link button.
 
 Colours follow a small palette: space black `#020405`, graphite `#080A0B`, light surface `#F1F0EA`, crawl yellow `#E8C943`, amber `#E39B36`, tech blue `#65B9D0`.

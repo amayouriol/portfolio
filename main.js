@@ -94,59 +94,38 @@ const PROJECTS = [
     secs: [['Discovery', 'Analyzed 12 months of data; in a 352-request sample over 6 months, 85% were approved anyway.'], ['Solution', 'Rules built on 7 variables let sales disburse requests under $40K without credit review.'], ['Approach', 'Proposed as a one-year trial to keep risk visible.'], ['Impact', 'Processing time halved; defaults stayed at 2.8% against a 3.5% target.']] }
 ];
 
-const PROOF = [
-  { v: '10h → 3h', t: 'credit analysis per case, with ~2,500 people using the module she owned' },
-  { v: '60 → 5 days', t: 'monthly reporting cycle, after she led 7 people to retire 12 teams’ spreadsheets' },
-  { v: '15 → 5 days', t: 'client response time in a controlled pilot of 4 AI agents she was product owner for' },
-  { v: '20x', t: 'funding growth to $150M under the staged plan she designed and the CFO approved' },
-  { v: '2.5x', t: 'invoice-financing volume after her self-service rules, with defaults at 2.8% vs a 3.5% target' },
-  { v: '95%', t: 'of her credit cases approved on first presentation, $800M a year, 6 of them to the CEO and board' }
-];
-const WHY = [
-  { k: '01', t: 'She finds the real problem', p: 'She questions the process before she designs the fix. She found that 87% of escalated requests were approved anyway, that a 60-day cycle came from teams trusting their own spreadsheets, and she held 70+ conversations with CFOs before she built an early-warning flag.' },
-  { k: '02', t: 'She ships with engineers', p: 'Product owner for 4 AI agents, leading 5 engineers through 10+ test rounds. Fixes shipped with a UX designer and IT, ranked from a 50-request backlog. A recruiting CRM scoped and launched with Claude Code and Codex on a $0 budget.' },
-  { k: '03', t: 'She proves it, then drives adoption', p: 'A randomized pilot with 20 officers, not a hunch. Then the hard part: 240 people trained through 15 champions, and 80+ users moved off their own spreadsheets. Her work gets used, not just delivered.' },
-  { k: '04', t: 'She earns trust at the top', p: 'She advised senior committees on $800M a year, with 6 cases a year before the CEO and board. She aligned 10+ teams behind a funding plan the CFO approved. Complex analysis in, a clear decision out.' }
-];
 const JOBS = [
   { logo: 'bcp', org: 'BCP · 2025–2026', role: 'Deputy Manager, Credit Risk', sum: 'Moved from analyzing credit to owning products inside it: AI agents, a cash flow module, an early-warning system and a growth plan, each with a measured result.', items: [
-    { m: '10h → 3h', t: 'Raised the need in user research, then owned a new cash flow module end to end with a team of 4 over ~10 months. She defined v2 and trained 240 users through 15 champions. ~2,500 people used it, covering 50% of the loan book.' },
-    { m: '15 → 5 days', t: 'As product owner, defined what 4 AI agents delivered and led 5 engineers through 10+ test rounds. A 3-month controlled pilot with 20 officers cut client response time by two-thirds; she recommended the express path for 30% of cases and management approved it.' },
-    { m: '20x', t: 'Designed a staged funding plan that let a fintech in the group launch its first credit card. She modeled 3 scenarios and aligned 10+ teams; the CFO approved hers as funding grew from $7M to $150M.' },
-    { m: '$40M', t: 'Turned 70+ client conversations into an early-warning flag with pre-set plans, reaching 30 at-risk clients before they asked. Most drew on the lines and none has defaulted. The team still uses the flag.' },
-    { m: '+38%', t: 'Defined the growth strategy for a $365M portfolio: lending grew 38% in a year while bad loans fell from 6.54% to 2.96%. Also built the team’s annual plan, lifting productivity from 86% to 122% of target.' }
+    { t: 'Raised the need in user research, then owned a new cash flow module end to end with a team of 4 over ~10 months. She defined v2 and trained 240 users through 15 champions. ~2,500 people used it, covering 50% of the loan book.' },
+    { t: 'As product owner, defined what 4 AI agents delivered and led 5 engineers through 10+ test rounds. A 3-month controlled pilot with 20 officers cut client response time by two-thirds; she recommended the express path for 30% of cases and management approved it.' },
+    { t: 'Designed a staged funding plan that let a fintech in the group launch its first credit card. She modeled 3 scenarios and aligned 10+ teams; the CFO approved hers as funding grew from $7M to $150M.' },
+    { t: 'Turned 70+ client conversations into an early-warning flag with pre-set plans, reaching 30 at-risk clients before they asked. Most drew on the lines and none has defaulted. The team still uses the flag.' },
+    { t: 'Defined the growth strategy for a $365M portfolio: lending grew 38% in a year while bad loans fell from 6.54% to 2.96%. Also built the team’s annual plan, lifting productivity from 86% to 122% of target.' }
   ] },
   { logo: 'bcp', org: 'BCP · 2023–2025', role: 'Assistant Manager, Credit Risk', sum: 'Made credit tools people actually use, and wrote the lending criteria for a segment the bank had no playbook for.', items: [
-    { m: '60 → 5 days', t: 'Traced a 60-day reporting cycle to teams trusting their own spreadsheets, then led a 7-person team to ship a dashboard that retired them. 80+ users across 12 credit teams, internal NPS of 94, and a division award.' },
-    { m: '15 → 3 min', t: 'Redesigned the CRM with a UX designer and IT: ranked 50 requests by impact and effort and shipped 15 fixes. Real-time logging of evaluations rose from 20% to 50% in the first month.' },
-    { m: 'NPS 70s → 87', t: 'Gave every client a dedicated analyst across a 100-person credit division, ending slow answers and repeat explanations. Analysis time fell by 7 days.' },
-    { m: '160 → 500', t: 'Wrote lending criteria for digital companies with no credit history by judging each on how it makes money, and won over risk managers. The segment tripled with no material defaults.' }
+    { t: 'Traced a 60-day reporting cycle to teams trusting their own spreadsheets, then led a 7-person team to ship a dashboard that retired them. 80+ users across 12 credit teams, internal NPS of 94, and a division award.' },
+    { t: 'Redesigned the CRM with a UX designer and IT: ranked 50 requests by impact and effort and shipped 15 fixes. Real-time logging of evaluations rose from 20% to 50% in the first month.' },
+    { t: 'Gave every client a dedicated analyst across a 100-person credit division, ending slow answers and repeat explanations. Analysis time fell by 7 days.' },
+    { t: 'Wrote lending criteria for digital companies with no credit history by judging each on how it makes money, and won over risk managers. The segment tripled with no material defaults.' }
   ] },
   { logo: 'bcp', org: 'BCP · 2021–2023', role: 'Deputy Assistant Manager', sum: 'Learned to turn data into rules that let the business move faster, and to win decisions without having the title.', items: [
-    { m: '2.5x', t: 'Found that 87% of invoice financing requests escalated to credit were approved anyway, then built rules on 7 variables so sales could disburse under $40K alone. Volume grew 2.5x and defaults stayed at 2.8% against a 3.5% target.' },
-    { m: '10 → 3 pages', t: 'Rewrote a 10-page approval policy in five working sessions with sales, data, legal and product. Escalations became on-the-spot approvals and monthly volume grew 41% the following year.' },
-    { m: '$20K limit', t: 'Won approval authority, the only analyst to get it, by showing her own approval history already matched her manager’s decisions. Responses went from next-day to same-day.' },
-    { m: '30 analysts', t: 'Designed and taught a week-long financial analysis course so commercial teams could screen credit requests themselves.' }
+    { t: 'Found that 87% of invoice financing requests escalated to credit were approved anyway, then built rules on 7 variables so sales could disburse under $40K alone. Volume grew 2.5x and defaults stayed at 2.8% against a 3.5% target.' },
+    { t: 'Rewrote a 10-page approval policy in five working sessions with sales, data, legal and product. Escalations became on-the-spot approvals and monthly volume grew 41% the following year.' },
+    { t: 'Won approval authority, the only analyst to get it, by showing her own approval history already matched her manager’s decisions. Responses went from next-day to same-day.' },
+    { t: 'Designed and taught a week-long financial analysis course so commercial teams could screen credit requests themselves.' }
   ] },
   { logo: 'bcp', org: 'BCP · 2020–2021', role: 'Analyst', sum: 'Started in credit analysis and quickly learned how companies make financial decisions.', items: [
-    { m: '#1', t: 'Named best analyst of the semester three months into the role.' },
-    { m: '$4M', t: 'Spotted a mismatch between 12-month debt and a client’s 3-year contracts before it showed in the financials, then restructured the debt alone.' }
+    { t: 'Named best analyst of the semester three months into the role.' },
+    { t: 'Spotted a mismatch between 12-month debt and a client’s 3-year contracts before it showed in the financials, then restructured the debt alone.' }
   ] },
   { logo: 'bbva', org: 'BBVA · 2020', role: 'Business Analyst', sum: 'Supported wholesale banking decisions through analysis and a close view of client needs.', items: [
-    { m: '$20M', t: 'Raced a capped government relief pool by modeling cash flows live on morning client calls, structuring loans for 10 clients who placed all their financing with the bank.' }
+    { t: 'Raced a capped government relief pool by modeling cash flows live on morning client calls, structuring loans for 10 clients who placed all their financing with the bank.' }
   ] },
   { logo: 'ey', org: 'EY · 2018–2020', role: 'Transfer Pricing', sum: 'Learned to structure ambiguous questions, analyze businesses, and communicate rigorous conclusions.', items: [
-    { m: 'Top groups', t: 'Built transfer pricing documentation for some of Peru’s largest economic groups and multinationals.' }
+    { t: 'Built transfer pricing documentation for some of Peru’s largest economic groups and multinationals.' }
   ] }
 ];
-const CAPS = [
-  { c: 'Problem framing', p: '87% approved anyway' },
-  { c: 'Analytical thinking', p: '352-request back-test' },
-  { c: 'Cross-functional leadership', p: '10+ teams aligned' },
-  { c: 'Execution', p: 'Led a 7-person team' },
-  { c: 'Building with AI', p: '4 agents, 1 shipped CRM' },
-  { c: 'Executive communication', p: '$800M a year advised' }
-];
+const CAPS = ['Problem framing', 'Analytical thinking', 'Cross-functional leadership', 'Execution', 'Building with AI', 'Executive communication'];
 const EDU = [
   { logo: 'haas', school: 'UC Berkeley — Haas School of Business', a: 'MBA Candidate', b: 'Class of 2028' },
   { logo: 'esan', school: 'Universidad ESAN', a: 'Economics and International Business', b: 'Undergraduate degree' },
@@ -442,8 +421,6 @@ ${planetHeader('repeating-linear-gradient(176deg,rgba(0,0,0,.28) 0 10px,transpar
 function experienceHTML() {
   const MONO = "font-family:'DM Mono',monospace";
   const SG = "font-family:'Space Grotesk',sans-serif";
-  const proof = PROOF.map((p) => `<div style="background:#111516;color:#E7E8E4;padding:22px 22px 24px;border-top:3px solid #E39B36"><div style="${SG};font-weight:700;font-size:clamp(34px,4vw,46px);letter-spacing:-.04em;line-height:1;white-space:nowrap;color:#E8C943;margin-bottom:12px">${p.v}</div><div style="font-size:14.5px;line-height:1.5;color:#b8bbb6">${p.t}</div></div>`).join('');
-  const why = WHY.map((w) => `<div style="border-top:1px solid rgba(22,25,24,.35);padding-top:16px"><div style="${MONO};font-size:12px;letter-spacing:.16em;color:#b9701a;margin-bottom:10px">${w.k}</div><h3 style="margin:0 0 10px;${SG};font-weight:600;font-size:clamp(21px,2.6vw,25px);letter-spacing:-.025em;line-height:1.15">${w.t}</h3><p style="margin:0;font-size:15.5px;line-height:1.6;color:#2f3432">${w.p}</p></div>`).join('');
   const jobs = JOBS.map((j, i) => {
     const current = i === 0;
     return `<li style="position:relative;padding:0 0 42px 64px">
@@ -451,20 +428,16 @@ function experienceHTML() {
 <div style="${MONO};font-size:12px;letter-spacing:.16em;color:#b9701a;margin-bottom:6px">${j.org}</div>
 <h3 style="margin:0 0 8px;${SG};font-weight:600;font-size:clamp(21px,3vw,26px);letter-spacing:-.025em;line-height:1.15">${j.role}</h3>
 <p style="margin:0;font-size:16px;line-height:1.6;color:#2f3432">${j.sum}</p>
-<ul style="margin:16px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:14px">${j.items.map((it) => `<li style="display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline"><span style="flex:0 0 124px;box-sizing:border-box;${MONO};font-weight:500;font-size:12px;letter-spacing:.04em;white-space:nowrap;background:#111516;color:#E8C943;padding:4px 9px">${it.m}</span><span style="flex:1 1 200px;font-size:15.5px;line-height:1.55;color:#2f3432">${it.t}</span></li>`).join('')}</ul>
+<ul style="margin:14px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px">${j.items.map((it) => `<li style="display:grid;grid-template-columns:14px 1fr;font-size:15.5px;line-height:1.55;color:#2f3432"><i style="width:6px;height:6px;background:#E39B36;margin-top:8px"></i><span>${it.t}</span></li>`).join('')}</ul>
 </li>`;
   }).join('');
-  const caps = CAPS.map((c, i) => `<div style="margin-bottom:16px"><div style="display:flex;justify-content:space-between;gap:12px;${MONO};font-size:12px;letter-spacing:.06em;margin-bottom:7px"><span>${c.c}</span><span class="pct" style="--i:${i};color:#E39B36;text-align:right">${c.p}</span></div><div style="position:relative;height:10px;background:#242928"><div class="skbar" style="--i:${i};position:absolute;left:0;top:0;bottom:0;background:#E39B36"></div><div style="position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 12px,#111516 12px 14px)"></div></div></div>`).join('');
+  const caps = CAPS.map((c, i) => `<div style="margin-bottom:16px"><div style="display:flex;justify-content:space-between;gap:12px;${MONO};font-size:12px;letter-spacing:.06em;margin-bottom:7px"><span>${c}</span><span class="pct" style="--i:${i};color:#E39B36">100%</span></div><div style="position:relative;height:10px;background:#242928"><div class="skbar" style="--i:${i};position:absolute;left:0;top:0;bottom:0;background:#E39B36"></div><div style="position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 12px,#111516 12px 14px)"></div></div></div>`).join('');
   const edu = EDU.map((e) => `<div style="padding:20px 0;border-bottom:1px solid rgba(22,25,24,.2);display:flex;gap:16px;align-items:flex-start">${logoBadge(e.logo, 48, false)}<div style="min-width:0"><div style="${SG};font-weight:600;font-size:22px;letter-spacing:-.025em;line-height:1.15;margin-bottom:6px">${e.school}</div><div style="font-size:15px;color:#2f3432;line-height:1.5">${e.a}</div><div style="${MONO};font-size:12px;color:#666B68;margin-top:4px">${e.b}</div></div></div>`).join('');
   return `<section id="experience" aria-label="Experience" style="background:#F1F0EA;color:#161918;padding:0 24px clamp(40px,6vw,80px)">
 ${planetHeader('repeating-linear-gradient(174deg,rgba(100,135,160,.2) 0 12px,transparent 12px 50px),radial-gradient(ellipse 80% 30vh at 50% 0,#dfeaef 0,#c2d5df 30%,#bcd0da 55%,#dfe6e8 80%,#F1F0EA 100%)', '0 -2px 12px rgba(195,228,242,.6),0 -18px 60px rgba(150,200,225,.22)', '#F1F0EA', 'THE ARCHIVE')}
 <div style="max-width:1180px;margin:0 auto;padding-top:clamp(36px,5vw,64px)">
 <h2 style="${H2};max-width:880px">Product results, earned inside a bank.</h2>
-<p style="margin:0 0 40px;font-size:clamp(17px,2vw,20px);line-height:1.65;color:#2f3432;max-width:720px">Andrea doesn’t just analyze problems. She finds the real one, ships the fix with engineers, proves it worked, and gets people to use it. Six years of that across BCP, BBVA and EY, with the numbers to back it.</p>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,330px),1fr));gap:14px;margin-bottom:72px">${proof}</div>
-<div style="${MONO};font-size:12px;letter-spacing:.2em;color:#b9701a;margin-bottom:22px">WHY ANDREA</div>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:36px 32px;margin-bottom:84px">${why}</div>
-<div style="${MONO};font-size:12px;letter-spacing:.2em;color:#b9701a;margin-bottom:28px">THE TRACK RECORD</div>
+<p style="margin:0 0 64px;font-size:clamp(17px,2vw,20px);line-height:1.65;color:#2f3432;max-width:720px">Andrea doesn’t just analyze problems. She finds the real one, ships the fix with engineers, proves it worked, and gets people to use it. Six years of that across BCP, BBVA and EY, with the numbers to back it.</p>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:56px;align-items:start">
 <ol style="list-style:none;margin:0;padding:0;position:relative"><i aria-hidden="true" style="position:absolute;left:19px;top:20px;bottom:20px;width:1px;background:#161918;opacity:.25"></i>${jobs}</ol>
 <div style="display:flex;flex-direction:column;gap:40px">
