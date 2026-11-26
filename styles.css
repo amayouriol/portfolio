@@ -46,6 +46,13 @@ button{font:inherit}
 .dkey{flex:1 1 110px;display:flex;flex-direction:column;gap:6px;text-align:left;cursor:pointer;padding:8px 12px;min-height:52px;border-radius:5px;color:#E7E8E4;font-family:inherit;border:1px solid #3a403e;background:linear-gradient(#2a2f2d,#171a19);box-shadow:0 3px 0 #070808,inset 0 1px 0 rgba(255,255,255,.08);transition:all .15s}
 .dkey:hover,.dkey.cur{border-color:#E39B36}
 .dkey.cur{background:linear-gradient(#3a3629,#1d1f1b);box-shadow:0 0 14px rgba(227,155,54,.3),inset 0 1px 0 rgba(255,255,255,.12)}
+@media (max-width:640px){
+.docknav{padding:14px 10px 8px!important;gap:6px!important}
+.dockfoot{display:none!important}
+.homebtn{flex-basis:44px;width:44px;height:44px}
+.dkey{flex:1 1 28%;min-height:38px;padding:6px 8px}
+.dkey span span:first-child{font-size:13px!important}
+}
 .dkey .led{width:7px;height:7px}
 .dkey.cur .led{background:#E8C943;box-shadow:0 0 8px #E8C943}
 .dock{position:fixed;left:0;right:0;bottom:0;z-index:90}

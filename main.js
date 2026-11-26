@@ -690,12 +690,12 @@ function enterHome({ instant }) {
 const SECTION = { story: storyHTML, projects: projectsHTML, experience: experienceHTML, portfolio: portfolioHTML, contact: contactHTML };
 
 function buildDock() {
-  dock.innerHTML = `<nav aria-label="Navigation deck" style="width:100%;background:linear-gradient(#2c3230,#0f1211 40%,#050606);border-top:2px solid #8a918d;border-radius:50% 50% 0 0 / 30px 30px 0 0;padding:20px clamp(16px,4vw,56px) 10px;display:flex;flex-direction:column;gap:10px;box-shadow:0 -14px 34px rgba(0,0,0,.75)">
+  dock.innerHTML = `<nav class="docknav" aria-label="Navigation deck" style="width:100%;background:linear-gradient(#2c3230,#0f1211 40%,#050606);border-top:2px solid #8a918d;border-radius:50% 50% 0 0 / 30px 30px 0 0;padding:20px clamp(16px,4vw,56px) 10px;display:flex;flex-direction:column;gap:10px;box-shadow:0 -14px 34px rgba(0,0,0,.75)">
 <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:stretch">
 <button type="button" class="homebtn" data-i="-1" aria-label="Home — back to the start"><i aria-hidden="true" style="position:absolute;top:7px;width:6px;height:6px;border-radius:50%;background:#65B9D0;box-shadow:0 0 8px #65B9D0"></i><span style="margin-top:8px">HOME</span></button>
 ${DEST.map((d, i) => `<button type="button" class="dkey" data-i="${i}" aria-label="${esc(d.t + ' — ' + d.s)}"><span style="display:flex;justify-content:space-between;align-items:center;gap:8px"><span style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:15px;letter-spacing:-.01em">${d.t}</span><span class="led"></span></span></button>`).join('')}
 </div>
-<div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 24px;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.06em;color:#8d928e;border-top:1px solid rgba(231,232,228,.12);padding-top:8px"><span>Andrea Mayo © 2026</span><span style="display:inline-flex;align-items:center">${droidIcon}Built with curiosity. Navigated by MVP-8.</span></div>
+<div class="dockfoot" style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 24px;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.06em;color:#8d928e;border-top:1px solid rgba(231,232,228,.12);padding-top:8px"><span>Andrea Mayo © 2026</span><span style="display:inline-flex;align-items:center">${droidIcon}Built with curiosity. Navigated by MVP-8.</span></div>
 </nav>`;
   $$('button', dock).forEach((b) => b.addEventListener('click', () => travel(+b.dataset.i)));
 }
@@ -707,6 +707,11 @@ function paintDock() {
     if (cur) b.setAttribute('aria-current', 'page'); else b.removeAttribute('aria-current');
   });
   dock.classList.add('open');
+  syncDockSpacer();
+}
+
+function syncDockSpacer() {
+  if (!dock.hidden) dockSpacer.style.height = dock.offsetHeight + 'px';
 }
 
 function enterSection(id) {
@@ -817,7 +822,7 @@ addEventListener('pointermove', (e) => {   // parallax: star layers and ships sh
   const nx = e.clientX / innerWidth - 0.5, ny = e.clientY / innerHeight - 0.5;
   $$('.plx').forEach((el) => { const d = +el.dataset.depth; el.style.transform = 'translate3d(' + (-nx * d).toFixed(1) + 'px,' + (-ny * d).toFixed(1) + 'px,0)'; });
 }, { passive: true });
-addEventListener('resize', layoutHome);
+addEventListener('resize', () => { layoutHome(); syncDockSpacer(); });
 
 /* ================= boot ================= */
 buildDock();
