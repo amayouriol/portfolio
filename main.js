@@ -95,12 +95,35 @@ const PROJECTS = [
 ];
 
 const JOBS = [
-  { logo: 'bcp', org: 'BCP · 2025–2026', role: 'Deputy Manager, Credit Risk', sum: 'Led product-style initiatives inside credit: AI-assisted reporting, a cash flow module, and portfolio strategy.', items: ['Product owner for an AI-assisted credit report pilot, speeding up how the bank responds to clients.', 'Advised senior committees and built the planning and scoring systems that match accounts to the right analysts.'] },
-  { logo: 'bcp', org: 'BCP · 2023–2025', role: 'Assistant Manager, Credit Risk', sum: 'Made credit tools people actually use, and wrote lending criteria for new kinds of businesses.', items: ['Led a team to replace slow, spreadsheet-based reporting with a dashboard people trust.', 'Redesigned the CRM with UX and IT, and wrote lending criteria for digital companies with no credit history.'] },
-  { logo: 'bcp', org: 'BCP · 2021–2023', role: 'Deputy Assistant Manager', sum: 'Learned to turn data into rules that let the business move faster.', items: ['Built a self-service decision engine for invoice financing.', 'Designed and taught an analysis course for credit analysts.'] },
-  { logo: 'bcp', org: 'BCP · 2020–2021', role: 'Analyst', sum: 'Started in credit analysis and quickly learned how companies make financial decisions.', items: ['Named best analyst of the semester within months of starting.'] },
-  { logo: 'bbva', org: 'BBVA · 2020', role: 'Business Analyst', sum: 'Supported wholesale banking decisions through analysis and a close view of client needs.', items: ['Structured emergency loans for clients by modeling cash flows live on client calls.'] },
-  { logo: 'ey', org: 'EY · 2018–2020', role: 'Transfer Pricing', sum: 'Learned to structure ambiguous questions, analyze businesses, and communicate rigorous conclusions.', items: ['Built transfer pricing documentation for some of Peru’s largest economic groups and multinationals.'] }
+  { logo: 'bcp', org: 'BCP · 2025–2026', role: 'Deputy Manager, Credit Risk', sum: 'Moved from analyzing credit to owning products inside it: AI agents, a cash flow module, an early-warning system and a growth plan, each with a measured result.', items: [
+    { t: 'Raised the need in user research, then owned a new cash flow module end to end with a team of 4 over ~10 months. She defined v2 and trained 240 users through 15 champions. ~2,500 people used it, covering 50% of the loan book.' },
+    { t: 'As product owner, defined what 4 AI agents delivered and led 5 engineers through 10+ test rounds. A 3-month controlled pilot with 20 officers cut client response time by two-thirds; she recommended the express path for 30% of cases and management approved it.' },
+    { t: 'Designed a staged funding plan that let a fintech in the group launch its first credit card. She modeled 3 scenarios and aligned 10+ teams; the CFO approved hers as funding grew from $7M to $150M.' },
+    { t: 'Turned 70+ client conversations into an early-warning flag with pre-set plans, reaching 30 at-risk clients before they asked. Most drew on the lines and none has defaulted. The team still uses the flag.' },
+    { t: 'Defined the growth strategy for a $365M portfolio: lending grew 38% in a year while bad loans fell from 6.54% to 2.96%. Also built the team’s annual plan, lifting productivity from 86% to 122% of target.' }
+  ] },
+  { logo: 'bcp', org: 'BCP · 2023–2025', role: 'Assistant Manager, Credit Risk', sum: 'Made credit tools people actually use, and wrote the lending criteria for a segment the bank had no playbook for.', items: [
+    { t: 'Traced a 60-day reporting cycle to teams trusting their own spreadsheets, then led a 7-person team to ship a dashboard that retired them. 80+ users across 12 credit teams, internal NPS of 94, and a division award.' },
+    { t: 'Redesigned the CRM with a UX designer and IT: ranked 50 requests by impact and effort and shipped 15 fixes. Real-time logging of evaluations rose from 20% to 50% in the first month.' },
+    { t: 'Gave every client a dedicated analyst across a 100-person credit division, ending slow answers and repeat explanations. Analysis time fell by 7 days.' },
+    { t: 'Wrote lending criteria for digital companies with no credit history by judging each on how it makes money, and won over risk managers. The segment tripled with no material defaults.' }
+  ] },
+  { logo: 'bcp', org: 'BCP · 2021–2023', role: 'Deputy Assistant Manager', sum: 'Learned to turn data into rules that let the business move faster, and to win decisions without having the title.', items: [
+    { t: 'Found that 87% of invoice financing requests escalated to credit were approved anyway, then built rules on 7 variables so sales could disburse under $40K alone. Volume grew 2.5x and defaults stayed at 2.8% against a 3.5% target.' },
+    { t: 'Rewrote a 10-page approval policy in five working sessions with sales, data, legal and product. Escalations became on-the-spot approvals and monthly volume grew 41% the following year.' },
+    { t: 'Won approval authority, the only analyst to get it, by showing her own approval history already matched her manager’s decisions. Responses went from next-day to same-day.' },
+    { t: 'Designed and taught a week-long financial analysis course so commercial teams could screen credit requests themselves.' }
+  ] },
+  { logo: 'bcp', org: 'BCP · 2020–2021', role: 'Analyst', sum: 'Started in credit analysis and quickly learned how companies make financial decisions.', items: [
+    { t: 'Named best analyst of the semester three months into the role.' },
+    { t: 'Spotted a mismatch between 12-month debt and a client’s 3-year contracts before it showed in the financials, then restructured the debt alone.' }
+  ] },
+  { logo: 'bbva', org: 'BBVA · 2020', role: 'Business Analyst', sum: 'Supported wholesale banking decisions through analysis and a close view of client needs.', items: [
+    { t: 'Raced a capped government relief pool by modeling cash flows live on morning client calls, structuring loans for 10 clients who placed all their financing with the bank.' }
+  ] },
+  { logo: 'ey', org: 'EY · 2018–2020', role: 'Transfer Pricing', sum: 'Learned to structure ambiguous questions, analyze businesses, and communicate rigorous conclusions.', items: [
+    { t: 'Built transfer pricing documentation for some of Peru’s largest economic groups and multinationals.' }
+  ] }
 ];
 const CAPS = ['Problem framing', 'Analytical thinking', 'Cross-functional leadership', 'Execution', 'Building with AI', 'Executive communication'];
 const EDU = [
@@ -396,32 +419,34 @@ ${planetHeader('repeating-linear-gradient(176deg,rgba(0,0,0,.28) 0 10px,transpar
 }
 
 function experienceHTML() {
+  const MONO = "font-family:'DM Mono',monospace";
+  const SG = "font-family:'Space Grotesk',sans-serif";
   const jobs = JOBS.map((j, i) => {
     const current = i === 0;
-    return `<li style="position:relative;padding:0 0 38px 64px">
+    return `<li style="position:relative;padding:0 0 42px 64px">
 <span class="node${current ? ' open' : ''}">${logoBadge(j.logo, 38)}</span>
-<div style="font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.16em;color:#b9701a;margin-bottom:6px">${j.org}</div>
-<h3 style="margin:0 0 8px;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(21px,3vw,26px);letter-spacing:-.025em;line-height:1.15">${j.role}</h3>
+<div style="${MONO};font-size:12px;letter-spacing:.16em;color:#b9701a;margin-bottom:6px">${j.org}</div>
+<h3 style="margin:0 0 8px;${SG};font-weight:600;font-size:clamp(21px,3vw,26px);letter-spacing:-.025em;line-height:1.15">${j.role}</h3>
 <p style="margin:0;font-size:16px;line-height:1.6;color:#2f3432">${j.sum}</p>
-<ul style="margin:14px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px">${j.items.map((it) => `<li style="display:grid;grid-template-columns:14px 1fr;font-size:15.5px;line-height:1.55;color:#2f3432"><i style="width:6px;height:6px;background:#E39B36;margin-top:8px"></i><span>${it}</span></li>`).join('')}</ul>
+<ul style="margin:14px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px">${j.items.map((it) => `<li style="display:grid;grid-template-columns:14px 1fr;font-size:15.5px;line-height:1.55;color:#2f3432"><i style="width:6px;height:6px;background:#E39B36;margin-top:8px"></i><span>${it.t}</span></li>`).join('')}</ul>
 </li>`;
   }).join('');
-  const caps = CAPS.map((c, i) => `<div style="margin-bottom:16px"><div style="display:flex;justify-content:space-between;font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.06em;margin-bottom:7px"><span>${c}</span><span class="pct" style="--i:${i};color:#E39B36">100%</span></div><div style="position:relative;height:10px;background:#242928"><div class="skbar" style="--i:${i};position:absolute;left:0;top:0;bottom:0;background:#E39B36"></div><div style="position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 12px,#111516 12px 14px)"></div></div></div>`).join('');
-  const edu = EDU.map((e) => `<div style="padding:20px 0;border-bottom:1px solid rgba(22,25,24,.2);display:flex;gap:16px;align-items:flex-start">${logoBadge(e.logo, 48, false)}<div style="min-width:0"><div style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:22px;letter-spacing:-.025em;line-height:1.15;margin-bottom:6px">${e.school}</div><div style="font-size:15px;color:#2f3432;line-height:1.5">${e.a}</div><div style="font-family:'DM Mono',monospace;font-size:12px;color:#666B68;margin-top:4px">${e.b}</div></div></div>`).join('');
+  const caps = CAPS.map((c, i) => `<div style="margin-bottom:16px"><div style="display:flex;justify-content:space-between;gap:12px;${MONO};font-size:12px;letter-spacing:.06em;margin-bottom:7px"><span>${c}</span><span class="pct" style="--i:${i};color:#E39B36">100%</span></div><div style="position:relative;height:10px;background:#242928"><div class="skbar" style="--i:${i};position:absolute;left:0;top:0;bottom:0;background:#E39B36"></div><div style="position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 12px,#111516 12px 14px)"></div></div></div>`).join('');
+  const edu = EDU.map((e) => `<div style="padding:20px 0;border-bottom:1px solid rgba(22,25,24,.2);display:flex;gap:16px;align-items:flex-start">${logoBadge(e.logo, 48, false)}<div style="min-width:0"><div style="${SG};font-weight:600;font-size:22px;letter-spacing:-.025em;line-height:1.15;margin-bottom:6px">${e.school}</div><div style="font-size:15px;color:#2f3432;line-height:1.5">${e.a}</div><div style="${MONO};font-size:12px;color:#666B68;margin-top:4px">${e.b}</div></div></div>`).join('');
   return `<section id="experience" aria-label="Experience" style="background:#F1F0EA;color:#161918;padding:0 24px clamp(40px,6vw,80px)">
 ${planetHeader('repeating-linear-gradient(174deg,rgba(100,135,160,.2) 0 12px,transparent 12px 50px),radial-gradient(ellipse 80% 30vh at 50% 0,#dfeaef 0,#c2d5df 30%,#bcd0da 55%,#dfe6e8 80%,#F1F0EA 100%)', '0 -2px 12px rgba(195,228,242,.6),0 -18px 60px rgba(150,200,225,.22)', '#F1F0EA', 'THE ARCHIVE')}
 <div style="max-width:1180px;margin:0 auto;padding-top:clamp(36px,5vw,64px)">
-<h2 style="${H2};max-width:780px">Business depth. Product direction.</h2>
-<p style="margin:0 0 64px;font-size:clamp(16px,2vw,19px);line-height:1.65;color:#2f3432;max-width:640px">A career spent making sense of risk, growth, financial decisions, and complex organizations—now focused toward building better products.</p>
+<h2 style="${H2};max-width:880px">Product results, earned inside a bank.</h2>
+<p style="margin:0 0 64px;font-size:clamp(17px,2vw,20px);line-height:1.65;color:#2f3432;max-width:720px">Andrea doesn’t just analyze problems. She finds the real one, ships the fix with engineers, proves it worked, and gets people to use it. Six years of that across BCP, BBVA and EY, with the numbers to back it.</p>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:56px;align-items:start">
 <ol style="list-style:none;margin:0;padding:0;position:relative"><i aria-hidden="true" style="position:absolute;left:19px;top:20px;bottom:20px;width:1px;background:#161918;opacity:.25"></i>${jobs}</ol>
 <div style="display:flex;flex-direction:column;gap:40px">
 <div id="skills" style="background:#111516;color:#E7E8E4;padding:26px 24px 12px;border:1px solid #242928">
-<div style="display:flex;justify-content:space-between;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.16em;color:#65B9D0;margin-bottom:20px"><span>MVP-8 // TOP SKILLS</span><span style="color:#7FAF7B">● ALL SYSTEMS GO</span></div>
+<div style="display:flex;justify-content:space-between;${MONO};font-size:11px;letter-spacing:.16em;color:#65B9D0;margin-bottom:20px"><span>MVP-8 // TOP SKILLS</span><span style="color:#7FAF7B">● ALL SYSTEMS GO</span></div>
 ${caps}
 
 </div>
-<div><h3 style="margin:0 0 6px;font-family:'DM Mono',monospace;font-weight:500;font-size:12px;letter-spacing:.2em;color:#b9701a">EDUCATION</h3>${edu}</div>
+<div><h3 style="margin:0 0 6px;${MONO};font-weight:500;font-size:12px;letter-spacing:.2em;color:#b9701a">EDUCATION</h3>${edu}</div>
 </div>
 </div>
 </div>
